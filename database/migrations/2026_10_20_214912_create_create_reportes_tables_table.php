@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('create_reportes_tables', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')
-                       $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('ubicacion');
+            $table->text('descripcion')->default('');
+            $table->date('fecha_inicio');
+           $table->timestamps();
         });
     }
 
